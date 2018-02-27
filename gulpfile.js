@@ -52,11 +52,12 @@ gulp.task('minify-js', function(cb) {
 
 gulp.task('sass:watch', function () {
     gulp.watch('res/scss/*.scss', ['sass']);
+    gulp.watch('res/css/*.css', ['bundle-css']);
 });
 
 gulp.task('js:watch', function () {
     gulp.watch('res/js/*.js', ['bundle-js']);
 });
 
-gulp.task('default', ['sass', 'sass:watch', 'bundle-css', 'bundle-js', 'js:watch']);
-gulp.task('release', ['sass', 'bundle-css', 'bundle-js', 'minify-css', 'minify-js']);
+gulp.task('default', ['sass', 'sass:watch', 'bundle-css', 'bundle-js', 'js:watch']); // Type gulp
+gulp.task('release', ['sass', 'bundle-css', 'bundle-js', 'minify-css', 'minify-js']); // Type gulp release

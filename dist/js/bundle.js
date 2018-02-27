@@ -10,8 +10,9 @@
         {
             ID_SELECTORS:
             {
-               "headerNav": "#headerNav"
-               "headerUl": "#headerNavUl"
+               "headerNav": "#headerNav",
+               "headerUl": "#headerNavUl",
+               "dummyID": "#dummyID"
             },
             CLASS_SELECTORS:
             {
