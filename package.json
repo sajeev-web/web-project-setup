@@ -14,6 +14,7 @@
   "author": "Sajeev kumar R",
   "license": "MIT",
   "dependencies": {
+    "foundation-sites": "6.2.4",
     "bootstrap": "3.3.7",
     "font-awesome": "4.7.0",
     "gulp-uglify": "^3.0.0",

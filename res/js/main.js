@@ -10,7 +10,8 @@
         {
             ID_SELECTORS:
             {
-                "div1": "#div1"
+                "div1": "#div1",
+                "div2": "#div2"
             },
             CLASS_SELECTORS:
             {
@@ -25,6 +26,7 @@
         return {
             main: function()
             {
+                $(document).foundation();
                 if ($(CONSTANTS.ID_SELECTORS.name).length)
                     this.functionName();
 

@@ -30,7 +30,7 @@ gulp.task('minify-css', () => {
         .pipe(gulp.dest('dist/css'));
 });
 
-//-----Concat all js(res/js/) to bundle.js(dist/css/)
+//-----Concat all js(res/js/) to bundle.js(dist/js/)
 gulp.task('bundle-js', function () {	
 	return gulp.src(['res/js/*.js'])
 		.pipe(concat('bundle.js'))
