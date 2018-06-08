@@ -18,7 +18,7 @@ $highlight: $primary-color;
 
 .responsive-blog-footer {
   background: $dark-gray;
-  padding: 3rem 3rem;
+  padding: 1rem;
   color: white;
 
   h4 {
@@ -39,7 +39,6 @@ $highlight: $primary-color;
   }
 
   .about-section, .tag-section {
-    margin-bottom: 2rem;
 
     a {
       color: $highlight;

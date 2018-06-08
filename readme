@@ -1,0 +1,27 @@
+// If the command line is throwing an error "gulp is not recognised as an internal or external command" do (A) else (B)
+
+A
+--------------------------------------------------------
+
+1. Install gulp globally.
+
+npm install -g gulp
+
+2. Install gulp locally in the project.
+
+npm install gulp
+
+3. Add below line in your package.json
+
+"scripts": {
+      "gulp": "gulp"
+ }
+
+4.Run gulp.
+
+npm run gulp
+
+
+B
+--------------------------------------------------------
+gulp release

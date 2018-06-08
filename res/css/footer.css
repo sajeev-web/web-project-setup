@@ -1,7 +1,7 @@
 /*  Footer */
 .responsive-blog-footer {
   background: #333333;
-  padding: 3rem 3rem;
+  padding: 1rem;
   color: white; }
   @media screen and (max-width: 39.9375em) {
     .responsive-blog-footer h4 {
@@ -12,10 +12,8 @@
     margin-bottom: 1.5rem; }
   .responsive-blog-footer .mailing-container {
     margin-bottom: 2rem; }
-  .responsive-blog-footer .about-section, .responsive-blog-footer .tag-section {
-    margin-bottom: 2rem; }
-    .responsive-blog-footer .about-section a, .responsive-blog-footer .tag-section a {
-      color: #ff0000; }
+  .responsive-blog-footer .about-section a, .responsive-blog-footer .tag-section a {
+    color: #ff0000; }
   .responsive-blog-footer .subscribe-button {
     background-color: #ff0000; }
     .responsive-blog-footer .subscribe-button:hover {
