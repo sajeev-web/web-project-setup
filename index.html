@@ -5,6 +5,8 @@
     <title>Html Project</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation.min.css">
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css">
     <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="dist/css/bundle.css">
@@ -47,6 +49,20 @@
         </div>
     </header>
     <main>
+        <div class="row">
+            <div class="small-12">
+                <div class="slick-container">
+                    <div class="single-item">
+                        <div><img src="https://picsum.photos/1024/600/?random"></div>
+                        <div><img src="https://picsum.photos/1024/600/?random"></div>
+                        <div><img src="https://picsum.photos/1024/600/?random"></div>
+                        <div><img src="https://picsum.photos/1024/600/?random"></div>
+                        <div><img src="https://picsum.photos/1024/600/?random"></div>
+                        <div><img src="https://picsum.photos/1024/600/?random"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row main-one-column">
             <div class="small-12 columns main-column">
                 
@@ -74,9 +90,22 @@
     </main>
     <footer class="responsive-blog-footer">
         <div class="row">
-            <div class="small-12 medium-8 columns small-order-2 medium-order-1 about-container">
+            <div class="small-12 columns about-container">
                 <div class="row">
-                    <div class="medium-8 columns about-section">
+                    <div class="small-12 medium-8 columns">
+                        <ul class="menu menu-small-centered footer-menu footer-menu-left">
+                            <li>
+                                <a href="/">One</a>
+                            </li>
+                            <li>
+                                <a href="#">Two</a>
+                            </li>
+                            <li>
+                                <a href="#">Three</a>
+                            </li>  
+                        </ul>
+                    </div>
+                    <div class="small-12 medium-4 columns about-section pull-right">
                         <div class="social">
                             <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
                             <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
@@ -86,12 +115,14 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </footer>
 
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="node_modules/slick-carousel/slick/slick.js"></script>
     <script src="node_modules/foundation-sites/dist/foundation.min.js"></script>
     <script src="dist/js/bundle.js"></script>
 </body>

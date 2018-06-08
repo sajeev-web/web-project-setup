@@ -1,8 +1,32 @@
 /*  Header */
 header {
   background-color: gray;
-  font-family: "Borders-Divide-But-Hearts-Shall-Conquer";
+  font-family: "Scriptina";
   border: none; }
 
 .sticky {
   width: 100%; }
+
+.slick-container {
+  margin: 0 auto;
+  width: 100%;
+  color: #333;
+  background: #419be0; }
+  .slick-container .slick-arrow {
+    position: absolute;
+    top: 40%;
+    z-index: 1;
+    color: white; }
+    .slick-container .slick-arrow.fa-arrow-right {
+      right: 0; }
+
+.slick-slide {
+  text-align: center;
+  color: #419be0;
+  background: gray; }
+  .slick-slide img {
+    margin: 0 auto;
+    width: 100%; }
+
+.fa-arrow-right {
+  position: absolute; }
