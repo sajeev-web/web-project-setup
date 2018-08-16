@@ -37,13 +37,15 @@
                         </div>
                     </li>
                 </ul>
-                <form action="#" class="search-form form-inline my-2 my-lg-0">
-                    <div class="form-group has-feedback">
-                        <label for="search" class="sr-only">Search</label>
-                        <input type="text" class="form-control" name="search" id="search" placeholder="search">
-                        <span class="form-control-feedback"><i class="fa fa-search" aria-hidden="true" ></i></span>
-                    </div>
-                </form>
+                <div class="navbar-right">
+                    <form class="search-form" role="search">
+                        <div class="form-group pull-right" id="search">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <button type="submit" class="form-control form-control-submit">Submit</button>
+                            <span class="search-label"><i class="glyphicon glyphicon-search"></i></span>
+                        </div>
+                  </form>
+                </div>
             </div>
         </nav>
     </header>
@@ -55,7 +57,68 @@
         </div>
     </div>
        
-    <main></main>
+    <main>
+        <div class="container">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
 <!-- Footer -->
@@ -119,6 +182,26 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> 
     <!-- <script src="node_modules/foundation-sites/dist/foundation.min.js"></script> -->
     <script src="dist/js/bundle.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#search').on("click",(function(e){
+                $(".form-group").addClass("sb-search-open");
+                e.stopPropagation()
+            }));
+            $(document).on("click", function(e) {
+                if ($(e.target).is("#search") === false && $(".form-control").val().length == 0) {
+                    $(".form-group").removeClass("sb-search-open");
+                }});
+                $(".form-control-submit").click(function(e){
+                    $(".form-control").each(function(){
+                    if($(".form-control").val().length == 0){
+                        e.preventDefault();
+                        $(this).css('border', '2px solid red');
+                    }
+                });
+            })
+        });
+    </script>
 </body>
 
 </html>

@@ -43,7 +43,7 @@ header {
   width: 100%;
   border-radius: 4px 25px 25px 4px; }
 
-.search-form .form-group span.form-control-feedback {
+.search-form .form-group .form-control-feedback {
   position: absolute;
   top: -1px;
   right: -2px;
