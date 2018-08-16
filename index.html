@@ -1,79 +1,123 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
     <title>Html Project</title>
-    <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation.min.css">
-    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation.min.css"> -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="dist/css/bundle.css">
 </head>
 
-<body>
+<body> 
     <header>
-        <div class="top-bar-container" data-sticky-container>
-            <div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
-                <div class="top-bar">
-                    <div class="row column">
-                        <div class="top-bar-left">
-                            <ul class="dropdown menu" data-dropdown-menu>
-                                <li class="menu-text">Site Title</li>
-                                <li class="has-submenu">
-                                    <a href="#">One</a>
-                                    <ul class="submenu menu vertical" data-submenu>
-                                        <li><a href="#">One</a></li>
-                                        <li><a href="#">Two</a></li>
-                                        <li><a href="#">Three</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Two</a></li>
-                                <li><a href="#">Three</a></li>
-                            </ul>
+        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
                         </div>
-                        <div class="top-bar-right">
-                            <ul class="menu">
-                                <li>
-                                    <input type="search" placeholder="Search">
-                                </li>
-                                <li>
-                                    <button type="button" class="button">Search</button>
-                                </li>
-                            </ul>
-                        </div>
+                    </li>
+                </ul>
+                <form action="#" class="search-form form-inline my-2 my-lg-0">
+                    <div class="form-group has-feedback">
+                        <label for="search" class="sr-only">Search</label>
+                        <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                        <span class="form-control-feedback"><i class="fa fa-search" aria-hidden="true" ></i></span>
                     </div>
-                </div>
+                </form>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container-fluid bg-info text-center">
+        <div class="jumbotron jumbotron-fluid align-center">
+            <h1 class="display-3">Welcome to Jumbotron</h1>
+            <h1 class="lead">Text to show under heading</h1>
+        </div>
+    </div>
+       
+    <main></main>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container-fluid bg-light fixed-bottom">
+        <!--
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                    <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+                </ul>
             </div>
         </div>
-    </header>
-    <main></main>
-    <div class="three-column-footer-contact-form-container">
-        <footer class="responsive-blog-footer">
-            <div class="row">
-                <div class="small-12 medium-8 columns small-order-2 medium-order-1 about-container">
-                    <div class="row">
-                        <div class="medium-8 columns about-section">
-                            <div class="social">
-                                <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                                <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                                <i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i>
-                                <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="small-12 medium-4 columns small-order-1 medium-order-2 mailing-container">
-                    <h4 class="mailing-list">Join my mailing list</h4>
-                    <input type="text" placeholder="Email Address">
-                    <a class="button expanded subscribe-button" href="#">Subscribe Now</a>
-                </div>
+        -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-sm-4">
+                <ul class="list-unstyled list-inline social text-center mb-0">
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
             </div>
-        </footer>
+        </div>  
+         <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+          <a href="https://mdbootstrap.com/bootstrap-tutorial/"> wwww.getbootstrap.com</a>
+        </div>
+        <!-- Copyright -->
     </div>
-
+</footer>
+    <!-- ./Footer -->
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
-    <script src="node_modules/foundation-sites/dist/foundation.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> 
+    <!-- <script src="node_modules/foundation-sites/dist/foundation.min.js"></script> -->
     <script src="dist/js/bundle.js"></script>
 </body>
 
