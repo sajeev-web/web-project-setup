@@ -10,12 +10,10 @@
         {
             ID_SELECTORS:
             {
-                "div1": "#div1",
-                "div2": "#div2"
             },
             CLASS_SELECTORS:
             {
-                
+               "tabs" : ".nav-item"
             },
             URLS:
             {
@@ -26,23 +24,28 @@
         return {
             main: function()
             {
-                $(document).foundation();
-                if ($(CONSTANTS.ID_SELECTORS.name).length)
-                    this.functionName();
+                if ($(CONSTANTS.CLASS_SELECTORS.tabs).length) {
+                    this.handleTabs();
+                }
 
             },
-            functionName: function()
+            handleTabs: function()
             {
                 var that = this;
-                $(CONSTANTS.CUSTOM_SELECTORS.showResetPassword).on("click", function(e)
+                $(CONSTANTS.CLASS_SELECTORS.tabs).on("click", function(e)
                 {
-                    e.preventDefault();
-
-                    that.clearResetPasswordMessages();
-                    $(CONSTANTS.ID_SELECTORS.resetWrapper).removeClass("hide");
-                    $(CONSTANTS.ID_SELECTORS.loginWrapper).addClass("hide");
-
-                    return false;
+                    if ($(this).find(".nav-link").attr("href") == "#overview") {
+                        console.log("overview");
+                        axios.get("http://www.omdbapi.com/?i=tt3896198&apikey=8778835e&t=Fight+Club")
+                            .then((response) => {
+                                console.log(response);
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                            });
+                    } else {
+                        console.log("cast");
+                    }
                 });
             },
            

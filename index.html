@@ -3,61 +3,36 @@
 
 <head>
     <title>Html Project</title>
-    <!-- <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation.min.css"> -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/css/bundle.css">
 </head>
 
 <body> 
     <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown
-                    </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                </ul>
-                <div class="navbar-right">
-                    <form class="search-form" role="search">
-                        <div class="form-group pull-right" id="search">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <button type="submit" class="form-control form-control-submit">Submit</button>
-                            <span class="search-label"><i class="glyphicon glyphicon-search"></i></span>
-                        </div>
-                  </form>
-                </div>
-            </div>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#overview">Overview</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#cast">Cast</a>
+                </li>
+            </ul>
         </nav>
     </header>
-    
-    <div class="container-fluid bg-info text-center">
-        <div class="jumbotron jumbotron-fluid align-center">
-            <h1 class="display-3">Welcome to Jumbotron</h1>
-            <h1 class="lead">Text to show under heading</h1>
-        </div>
-    </div>
-       
     <main>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="overview" class="container tab-pane active"><br>
+                <h3>HOME</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div id="cast" class="container tab-pane fade"><br>
+                <h3>Menu 1</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+        <!--
         <div class="container">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card">
@@ -84,124 +59,14 @@
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/014/960/full/PD_MusicEverything_POH-1.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
             </div>
         </div>
+    -->
     </main>
-
-
-<!-- Footer -->
-<footer>
-    <div class="container-fluid bg-light fixed-bottom">
-        <!--
-        <div class="row text-center text-xs-center text-sm-left text-md-left">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <h5>Quick links</h5>
-                <ul class="list-unstyled quick-links">
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <h5>Quick links</h5>
-                <ul class="list-unstyled quick-links">
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <h5>Quick links</h5>
-                <ul class="list-unstyled quick-links">
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-                    <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
-                </ul>
-            </div>
-        </div>
-        -->
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 mt-sm-4">
-                <ul class="list-unstyled list-inline social text-center mb-0">
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
-                </ul>
-            </div>
-        </div>  
-         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-          <a href="https://mdbootstrap.com/bootstrap-tutorial/"> wwww.getbootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-    </div>
-</footer>
-    <!-- ./Footer -->
-
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> 
-    <!-- <script src="node_modules/foundation-sites/dist/foundation.min.js"></script> -->
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
     <script src="dist/js/bundle.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#search').on("click",(function(e){
-                $(".form-group").addClass("sb-search-open");
-                e.stopPropagation()
-            }));
-            $(document).on("click", function(e) {
-                if ($(e.target).is("#search") === false && $(".form-control").val().length == 0) {
-                    $(".form-group").removeClass("sb-search-open");
-                }});
-                $(".form-control-submit").click(function(e){
-                    $(".form-control").each(function(){
-                    if($(".form-control").val().length == 0){
-                        e.preventDefault();
-                        $(this).css('border', '2px solid red');
-                    }
-                });
-            })
-        });
-    </script>
 </body>
 
 </html>
