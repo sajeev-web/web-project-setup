@@ -3,21 +3,35 @@
 
 <head>
     <title>Html Project</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
     <link rel="stylesheet" type="text/css" href="dist/css/bundle.css">
 </head>
 
-<body> 
+<body>
     <header>
-        <nav>
+        <!-- Movie Search -->
+        <div class="row p-3">
+            <div class="col-12">
+                <form  class="search-form" role="search" action="#">
+                    <div class="form-group m-0" id="search">
+                        <input type="text" name="search" class="form-control" placeholder="Search movie">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Movie Name -->
+        <div class="row p-3 title-block d-none" style="background-color: #A31860; color: white;">
+        </div>
+        <nav class="d-none">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#overview">Overview</a>
+                    <a class="nav-link active" data-toggle="tab" href="#overview">Overview</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#cast">Cast</a>
+                    <a class="nav-link" data-toggle="tab" href="#cast">Cast</a>
                 </li>
             </ul>
         </nav>
@@ -25,28 +39,76 @@
     <main>
         <!-- Tab panes -->
         <div class="tab-content">
-            <div id="overview" class="container tab-pane m-0 active"><br>
-                <h3>HOME</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div id="overview" class="container-fluid tab-pane m-0 active">
+                <!-- Movie pics -->
+                <div class="row mt-3">
+                    <div class="col-sm-12 movie-block">
+                    </div>
+                </div>
+                <!-- Movie ratings -->
+                <div class="row px-3 justify-content-between ratings-block">
+                </div>
+                <!-- Movie Description -->
+                <div class="row pt-3">
+                    <div class="col-12">
+                        <p class="desc-block"></p>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="movie-pics">
-                            <div><img src="http://maggiesadler.com/wp-content/uploads/2015/10/11189261_759116200870985_1595157767_n.jpg" /></div>
-                            <div><img src="http://maggiesadler.com/wp-content/uploads/2015/10/10004088_1491055334449687_1187165020_n.jpg" /></div>
-                            <div><img src="http://maggiesadler.com/wp-content/uploads/2015/10/10817863_856543214397968_517239188_n.jpg" /></div>
-                            <div><img src="http://maggiesadler.com/wp-content/uploads/2015/10/10919749_326992714172441_299394464_n.jpg" /></div>
-                            <div><img src="http://maggiesadler.com/wp-content/uploads/2015/10/10617007_939025979457209_6938406_n.jpg" /></div>
-                            <div><img src="http://maggiesadler.com/wp-content/uploads/2015/10/1168617_1435408473368301_409182770_n.jpg" /></div>
+                    <div class="col-12 misc-block">
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="cast" class="container-fluid tab-pane m-0 fade">
+                <div class="container">
+                    <div class="row d-flex justify-content-sm-around justify-content-md-between stores-block">
+                        <div class="card shadow border rounded  col-3 col-sm-4 col-md-3 m-3 m-sm-3 m-md-0 p-0 border-0">
+                            <img class="card-img-top border-image" src="dist/img/brad-pitt.jpg" alt="carrefour store 1">
+                            <div class="card-body p-2">
+                                <p class="card-text m-0"><small class="text-muted font-small">Brad Pitt</small></p>
+                                <h5 class="card-title font-xtra-small">AED 1000</h5>
+                            </div>
+                        </div>
+                        <div class="card shadow border rounded col-3 col-sm-4 col-md-3 m-3 m-sm-3 m-md-0 p-0 border-0">
+                            <img class="card-img-top border-image" src="dist/img/brad-pitt.jpg" alt="carrefour store 1">
+                            <div class="card-body p-2">
+                                <p class="card-text m-0"><small class="text-muted font-small">Brad Pitt</small></p>
+                                <h5 class="card-title font-xtra-small">AED 2000</h5>
+                            </div>
+                        </div>
+                        <div class="card shadow border col-3 col-sm-4 col-md-3 m-3 m-sm-3 m-md-0 p-0 border-0">
+                            <img class="card-img-top border-image" src="dist/img/brad-pitt.jpg" alt="carrefour store 1">
+                            <div class="card-body p-2">
+                                <p class="card-text m-0"><small class="text-muted font-small">Brad Pitt</small></p>
+                                <h5 class="card-title font-xtra-small">AED 3000</h5>
+                            </div>
+                        </div>
+                        <div class="card shadow border rounded  col-3 col-sm-4 col-md-3 m-3 m-sm-3 m-md-0 p-0 border-0">
+                            <img class="card-img-top border-image" src="dist/img/brad-pitt.jpg" alt="carrefour store 1">
+                            <div class="card-body p-2">
+                                <p class="card-text m-0"><small class="text-muted font-small">Brad Pitt</small></p>
+                                <h5 class="card-title font-xtra-small">AED 1000</h5>
+                            </div>
+                        </div>
+                        <div class="card shadow border rounded col-3 col-sm-4 col-md-3 m-3 m-sm-3 m-md-0 p-0 border-0">
+                            <img class="card-img-top border-image" src="dist/img/brad-pitt.jpg" alt="carrefour store 1">
+                            <div class="card-body p-2">
+                                <p class="card-text m-0"><small class="text-muted font-small">Brad Pitt</small></p>
+                                <h5 class="card-title font-xtra-small">AED 2000</h5>
+                            </div>
+                        </div>
+                        <div class="card shadow border col-3 col-sm-4 col-md-3 m-3 m-sm-3 m-md-0 p-0 border-0">
+                            <img class="card-img-top border-image" src="dist/img/brad-pitt.jpg" alt="carrefour store 1">
+                            <div class="card-body p-2">
+                                <p class="card-text m-0"><small class="text-muted font-small">Brad Pitt</small></p>
+                                <h5 class="card-title font-xtra-small">AED 3000</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="cast" class="container tab-pane m-0 fade"><br>
-                <h3>Menu 1</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
         </div>
-
     </main>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>

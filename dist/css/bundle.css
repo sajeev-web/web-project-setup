@@ -40,10 +40,12 @@ input[type=checkbox]:checked + .checkbox:before {
 @charset "UTF-8";
 .movie-pics {
   max-width: 1000px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-color: white; }
 
 .slick-slide {
-  margin: 0 5px; }
+  margin: 0 0.25rem;
+  overflow: hidden; }
 
 .slick-list {
   margin: 0px -5px 0px -5px; }
@@ -314,6 +316,55 @@ button.slick-prev, button.slick-prev:hover {
   opacity: .75;
   color: black; }
 
+.ratings {
+  height: 3rem;
+  width: auto; }
+
+.info-text {
+  font-size: 0.7rem;
+  color: blue; }
+
+.like-unlike {
+  padding: 1rem 0; }
+
+.font-small {
+  font-size: 0.8rem;
+  color: #111 !important; }
+
+.font-xtra-small {
+  font-size: 0.8rem;
+  color: #777; }
+
+.search-form .form-group {
+  transition: all 0.35s, border-radius 0s;
+  width: 100%;
+  background-color: #fff;
+  float: right !important; }
+
+.search-label {
+  position: relative;
+  top: 37px;
+  height: 36px;
+  width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EFF7FE;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right; }
+
+.search-label:hover {
+  background-color: #d1e6f9; }
+
+.search-form .form-group input.form-control {
+  background: #EFF7FE;
+  border: 1px solid #EFF7FE;
+  display: block; }
+
+nav {
+  background-color: #8B1452; }
+
 h1 {
   font-size: 2.5rem; }
 
@@ -335,8 +386,7 @@ header {
 .search-form .form-group {
   float: right !important;
   transition: all 0.35s, border-radius 0s;
-  width: 32px;
-  height: 32px;
+  width: 100%;
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
   border-radius: 25px;

@@ -13,12 +13,13 @@
             },
             CLASS_SELECTORS:
             {
-               "tabs": ".nav-item".
-               "moviePics":  ".movie-pics"
+               "tabs": ".nav-item",
+               "moviePics":  ".movie-pics",
+               "cast": ".card"
             },
             URLS:
             {
-                
+                "search": ".search-form"
             }
         }
 
@@ -29,27 +30,74 @@
                     this.handleTabs();
                 }
 
-                this.initialiseSlider();
 
-
+                if ($(CONSTANTS.CLASS_SELECTORS.cast).length) {
+                    this.showCastDetails();
+                }
             },
             handleTabs: function()
             {
-                var that = this;
-                $(CONSTANTS.CLASS_SELECTORS.tabs).on("click", function(e)
+                var $this = this;
+                $(CONSTANTS.URLS.search).on("submit", function(e)
                 {
-                    if ($(this).find(".nav-link").attr("href") == "#overview") {
-                        console.log("overview");
-                        axios.get("http://www.omdbapi.com/?i=tt3896198&apikey=8778835e&t=Fight+Club")
-                            .then((response) => {
-                                console.log(response);
-                            })
-                            .catch((error) => {
-                                console.log(error);
+                    e.preventDefault();
+                    var searchText = $(this).find("input").val();
+                    axios.get("http://www.omdbapi.com/?apikey=8778835e&plot=full&t=" + searchText)
+                        .then((response) => {
+                            $(".title-block, nav").removeClass("d-none");
+
+                           // Ratings
+                            let ratings = response.data.Ratings;
+                            let output = "";
+                            $.each(ratings, (index, rating) => {
+                                output += `
+                                    <div class="col-4 ratings border d-flex align-items-center">
+                                        <div class="row">
+                                            <div class="col-12">${rating.Value}</div>
+                                            <div class="col-12 info-text blue">${rating.Source}</div>
+                                        </div>
+                                    </div>
+                                `;
                             });
-                    } else {
-                        console.log("cast");
-                    }
+                            $(".ratings-block").html(output);
+
+                            // Title
+                            var outputTitle = "";
+                            outputTitle = `
+                                <div class="col-8">${response.data.Title}
+                                <br>${response.data.Title} . ${response.data.Genre} . ${response.data.Runtime}</div>
+                            `;
+                            $(".title-block").html(outputTitle);
+                            $(".desc-block").html(response.data.Plot);
+
+                            var outputMisc = `
+                                <p class="">Initial Release: ${response.data.Released}</p>
+                                <p class="">Director: ${response.data.Director}</p>
+                                <p class="">Box office: ${response.data.BoxOffice}</p>
+                                <p class="">Production: ${response.data.Production}</p>
+                            `;
+                            $(".misc-block").html(outputMisc);
+
+                            var outputPosters = `
+                                <div class="movie-pics">
+                                    <div><img src="${response.data.Poster}" />
+                                    </div>
+                                    <div><img src="${response.data.Poster}" />
+                                    </div>
+                                    <div><img src="${response.data.Poster}" />
+                                    </div>
+                                    <div><img src="${response.data.Poster}" />
+                                    </div>
+                                </div>
+                            `;
+
+                            $(".movie-block").html(outputPosters);
+                            $this.initialiseSlider();
+
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
                 });
             },
            initialiseSlider: function() {
@@ -59,13 +107,13 @@
                     speed: 500,
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    autoplay: true,
+                    autoplay: false,
                     autoplaySpeed: 2000,
-                    arrows: true,
+                    arrows: false,
                     responsive: [{
                         breakpoint: 600,
                         settings: {
-                            slidesToShow: 2,
+                            slidesToShow:3,
                             slidesToScroll: 1
                         }
                     },
@@ -78,6 +126,8 @@
                        }
                     }]
                 });
+           },
+           showCastDetails: function() {
            }
         }
     })();
