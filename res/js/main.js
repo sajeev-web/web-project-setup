@@ -24,84 +24,98 @@
             }
         }
 
+        var currentSearch = "";
+
         return {
             main: function()
             {
-                if ($(CONSTANTS.CLASS_SELECTORS.tabs).length) {
-                    this.handleTabs();
-                }
+                this.handleEvents();
                 if ($(CONSTANTS.CLASS_SELECTORS.cast).length) {
                     this.showCastDetails();
                 }
                 this.shareIt();
             },
-            handleTabs: function()
+            handleEvents: function()
             {
                 var $this = this;
                 $(CONSTANTS.URLS.search).on("submit", function(e)
                 {
                     e.preventDefault();
                     var searchText = $(this).find("input").val();
-                    axios.get("http://www.omdbapi.com/?apikey=8778835e&plot=full&t=" + searchText)
-                        .then((response) => {
-                            $(".title-block, nav").removeClass("d-none");
+                    currentSearch = searchText;
+                    $this.loadMovie(searchText);
 
-                           // Ratings
-                            let ratings = response.data.Ratings;
-                            let output = "";
-                            $.each(ratings, (index, rating) => {
-                                output += `
-                                    <div class="col-4 ratings border d-flex align-items-center">
-                                        <div class="row m-0 w-100">
-                                            <div class="col-12 pr-0 pt-3">${rating.Value}</div>
-                                            <div class="col-12 info-text text-truncate pb-3">${rating.Source}</div>
-                                        </div>
-                                    </div>
-                                `;
-                            });
-                            $(".ratings-block").html(output);
+                    $(this).find("input").val("").focus();
+                });
 
-                            // Title
-                            var outputTitle = "";
-                            outputTitle = `
-                                <div class="col-8">${response.data.Title}
-                                <br>${response.data.Title} . ${response.data.Genre} . ${response.data.Runtime}</div>
-                                <div class="col-4 text-right share-it"><i class="fa fa-ellipsis-v"></i></div>
-                            `;
-                            $(".title-block").html(outputTitle);
-                            $(".desc-block").html(response.data.Plot);
+                // $(CONSTANTS.CLASS_SELECTORS.tabs).on("click", function(e)
+                // {
+                //     if ($(this).attr("href") == "overview") {
+                //          $this.loadMovie(searchText);
+                //     }
+                // });
+            },
+            loadMovie: function(searchText) {
+                var $this = this;
+                axios.get("http://www.omdbapi.com/?apikey=8778835e&plot=full&t=" + searchText)
+                .then((response) => {
+                    $(".title-block, nav").removeClass("d-none");
 
-                            var outputMisc = `
-                                <p class="">Initial Release: ${response.data.Released}</p>
-                                <p class="">Director: ${response.data.Director}</p>
-                                <p class="">Box office: ${response.data.BoxOffice}</p>
-                                <p class="">Production: ${response.data.Production}</p>
-                            `;
-                            $(".misc-block").html(outputMisc);
-
-                            var outputPosters = `
-                                <div class="movie-pics">
-                                    <div><img src="${response.data.Poster}" />
-                                    </div>
-                                    <div><img src="${response.data.Poster}" />
-                                    </div>
-                                    <div><img src="${response.data.Poster}" />
-                                    </div>
-                                    <div><img src="${response.data.Poster}" />
-                                    </div>
+                   // Ratings
+                    let ratings = response.data.Ratings;
+                    let output = "";
+                    $.each(ratings, (index, rating) => {
+                        output += `
+                            <div class="col-4 ratings border d-flex align-items-center">
+                                <div class="row m-0 w-100">
+                                    <div class="col-12 px-0 pt-3">${rating.Value}</div>
+                                    <div class="col-12 info-text text-truncate px-0 pb-3 ">${rating.Source}</div>
                                 </div>
-                            `;
+                            </div>
+                        `;
+                    });
+                    $(".ratings-block").html(output);
 
-                            $(".movie-block").html(outputPosters);
-                            $this.initialiseSlider();
+                    // Title
+                    var outputTitle = "";
+                    outputTitle = `
+                        <div class="col-8">${response.data.Title}
+                        <br>${response.data.Title} . ${response.data.Genre} . ${response.data.Runtime}</div>
+                        <div class="col-4 text-right share-it"><i class="fa fa-ellipsis-v"></i></div>
+                    `;
+                    $(".title-block").html(outputTitle);
+                    $(".desc-block").html(response.data.Plot);
 
-                        })
-                        .catch((error) => {
-                            console.log(error);
-                        });
+                    var outputMisc = `
+                        <p class="">Initial Release: ${response.data.Released}</p>
+                        <p class="">Director: ${response.data.Director}</p>
+                        <p class="">Box office: ${response.data.BoxOffice}</p>
+                        <p class="">Production: ${response.data.Production}</p>
+                    `;
+                    $(".misc-block").html(outputMisc);
+
+                    var outputPosters = `
+                        <div class="movie-pics">
+                            <div><img src="${response.data.Poster}" />
+                            </div>
+                            <div><img src="${response.data.Poster}" />
+                            </div>
+                            <div><img src="${response.data.Poster}" />
+                            </div>
+                            <div><img src="${response.data.Poster}" />
+                            </div>
+                        </div>
+                    `;
+
+                    $(".movie-block").html(outputPosters);
+                    $this.initialiseSlider();
+
+                })
+                .catch((error) => {
+                    console.log(error);
                 });
             },
-           initialiseSlider: function() {
+            initialiseSlider: function() {
                 $('.movie-pics').slick({
                     dots: false,
                     infinite: true,
@@ -122,7 +136,7 @@
                        breakpoint: 400,
                        settings: {
                             arrows: false,
-                            slidesToShow: 1,
+                            slidesToShow: 2,
                             slidesToScroll: 1
                        }
                     }]
