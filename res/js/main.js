@@ -15,7 +15,8 @@
             {
                "tabs": ".nav-item",
                "moviePics":  ".movie-pics",
-               "cast": ".card"
+               "cast": ".card",
+               "share": ".share-it"
             },
             URLS:
             {
@@ -29,11 +30,10 @@
                 if ($(CONSTANTS.CLASS_SELECTORS.tabs).length) {
                     this.handleTabs();
                 }
-
-
                 if ($(CONSTANTS.CLASS_SELECTORS.cast).length) {
                     this.showCastDetails();
                 }
+                this.shareIt();
             },
             handleTabs: function()
             {
@@ -52,9 +52,9 @@
                             $.each(ratings, (index, rating) => {
                                 output += `
                                     <div class="col-4 ratings border d-flex align-items-center">
-                                        <div class="row">
-                                            <div class="col-12">${rating.Value}</div>
-                                            <div class="col-12 info-text blue">${rating.Source}</div>
+                                        <div class="row m-0 w-100">
+                                            <div class="col-12 pr-0 pt-3">${rating.Value}</div>
+                                            <div class="col-12 info-text text-truncate pb-3">${rating.Source}</div>
                                         </div>
                                     </div>
                                 `;
@@ -66,6 +66,7 @@
                             outputTitle = `
                                 <div class="col-8">${response.data.Title}
                                 <br>${response.data.Title} . ${response.data.Genre} . ${response.data.Runtime}</div>
+                                <div class="col-4 text-right share-it"><i class="fa fa-ellipsis-v"></i></div>
                             `;
                             $(".title-block").html(outputTitle);
                             $(".desc-block").html(response.data.Plot);
@@ -128,6 +129,11 @@
                 });
            },
            showCastDetails: function() {
+           },
+           shareIt: function() {
+                $(".title-block").delegate(".share-it", "click", function() {
+                    $(".share-popup").toggleClass("d-none");
+                });
            }
         }
     })();

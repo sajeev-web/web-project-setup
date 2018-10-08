@@ -364,14 +364,9 @@ button.slick-prev, button.slick-prev:hover {
     color: black;
 }
 
-.ratings {
-    height: 3rem;
-    width: auto;
-}
-
 .info-text {
     font-size: 0.7rem;
-    color: blue;
+    color: #007bff;
 }
 
 .like-unlike {
@@ -421,4 +416,32 @@ button.slick-prev, button.slick-prev:hover {
 
 nav {
     background-color: #8B1452;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #bbb;
+    text-transform: uppercase;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    border-color: none !important;
+    border-bottom:  3px solid white;
+    color: #fff;
+    background-color: transparent;
+
+}
+
+.title-block {
+    background-color: #A31860;
+    color: white;
+    position: relative;
+}
+
+.share-popup {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    padding: 1rem;
+    position: absolute;
 }
