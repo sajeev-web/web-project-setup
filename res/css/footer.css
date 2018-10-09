@@ -5,7 +5,7 @@
   background-color: white; }
 
 .slick-slide {
-  margin: 0 0.25rem;
+  margin: 0.25rem 0.25rem 0;
   overflow: hidden; }
 
 .slick-list {
@@ -340,10 +340,23 @@ nav {
 
 .share-popup {
   width: 150px;
-  height: 150px;
+  height: 75px;
   background-color: #fff;
-  padding: 1rem;
-  position: absolute; }
+  padding: 0.5rem;
+  position: absolute;
+  right: 2.2rem;
+  top: 2rem;
+  color: #aaa; }
+  .share-popup span {
+    font-size: 0.8rem; }
+
+.actor-name {
+  color: #fff; }
+  .actor-name .name {
+    font-size: 1.2rem; }
+  .actor-name .lead {
+    font-size: 0.8rem; }
 
 .card-shadow {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }

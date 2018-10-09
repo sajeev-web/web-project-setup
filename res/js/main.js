@@ -10,13 +10,15 @@
         {
             ID_SELECTORS:
             {
+                "castDetails": "#cast-folio"
             },
             CLASS_SELECTORS:
             {
                "tabs": ".nav-item",
                "moviePics":  ".movie-pics",
                "cast": ".card",
-               "share": ".share-it"
+               "share": ".share-it",
+               "home": ".go-back"
             },
             URLS:
             {
@@ -34,6 +36,9 @@
                     this.showCastDetails();
                 }
                 this.shareIt();
+                if ($(CONSTANTS.ID_SELECTORS.castDetails).length) {
+                    this.initialiseSlider();
+                }
             },
             handleEvents: function()
             {
@@ -43,6 +48,8 @@
                     e.preventDefault();
                     var searchText = $(this).find("input").val();
                     currentSearch = searchText;
+
+                    sessionStorage.setItem("searchText", searchText);
                     $this.loadMovie(searchText);
 
                     $(this).find("input").val("").focus();
@@ -54,6 +61,10 @@
                 //          $this.loadMovie(searchText);
                 //     }
                 // });
+
+                let searchText = sessionStorage.getItem("searchText");
+                if(searchText != "")
+                    $this.loadMovie(searchText);
             },
             loadMovie: function(searchText) {
                 var $this = this;
@@ -72,6 +83,7 @@
                                     <div class="col-12 info-text text-truncate px-0 pb-3 ">${rating.Source}</div>
                                 </div>
                             </div>
+
                         `;
                     });
                     $(".ratings-block").html(output);
@@ -82,6 +94,10 @@
                         <div class="col-8">${response.data.Title}
                         <br>${response.data.Title} . ${response.data.Genre} . ${response.data.Runtime}</div>
                         <div class="col-4 text-right share-it"><i class="fa fa-ellipsis-v"></i></div>
+                        <div class="share-popup d-none">
+                            <div class="col-12 p-0 pb-2"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;<span>Share</span></div>
+                            <div class="col-12 p-0"><i class="fa fa-comment"></i>&nbsp;&nbsp;<span>Send feedback</span></div>
+                        </div>
                     `;
                     $(".title-block").html(outputTitle);
                     $(".desc-block").html(response.data.Plot);
